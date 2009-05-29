@@ -3,7 +3,7 @@
 require 'gtk2'
 
 class FileTreeView < Gtk::TreeView
-  
+
   def initialize
     @stocks = Hash[
       "file", [Gtk::Stock::FILE, "#000000"],
