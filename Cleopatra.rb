@@ -9,12 +9,12 @@ module Cleopatra
 end
 
 # Find the lib directory based on the path of this file
-lib_dir = File.join(File.dirname(File.expand_path($0)), "/lib")
-cleopatra_lib_dir = File.join(lib_dir, "cleopatra")
+$lib_dir = File.join(File.dirname(File.expand_path($0)), "/lib")
+@cleopatra_lib_dir = File.join($lib_dir, "cleopatra")
 
 # Add the lib directory in Ruby's search path
-if File.directory? cleopatra_lib_dir
-  $:.unshift(lib_dir)
+if File.directory? @cleopatra_lib_dir
+  $:.unshift($lib_dir)
 end
 
 require 'rubygems'
@@ -50,13 +50,13 @@ fork do
   expander = Gtk::Expander.new('_Files', true)
   expander.add(filesport)
 
-  expander.set_direction "rtl"
+  expander.set_direction "ltr"
 
   expander.signal_connect("notify::expanded") {
-    filesport.width_request=250
+    filesport.width_request=0
   }
 
-  expander.expanded = true
+  expander.expanded = false
   
   gtk_full_panel = Gtk::HPaned.new
   gtk_full_panel.pack1(expander, false, true)
