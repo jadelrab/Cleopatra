@@ -1,4 +1,5 @@
 require 'gtk2'
+require 'cleopatra/icons'
 
 module Cleopatra
 
@@ -12,8 +13,9 @@ module Cleopatra
       gtk_window.signal_connect("delete_event") do
         Gtk.main_quit
       end
-      gtk_window.title = "Cleopatra Rocks"
+      gtk_window.title = "Cleopatra Editor"
       gtk_window.set_default_size(800, 600)
+      gtk_window.set_icon_list(Icons.window_icons)
     end
 
     def gtk_window
