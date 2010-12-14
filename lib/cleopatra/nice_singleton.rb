@@ -1,7 +1,7 @@
 require 'singleton'
 
 module Cleopatra
-  module NiceSingelton
+  module NiceSingleton
 
     def self.included(other)
       if other.class == Class
