@@ -2,7 +2,6 @@
 
 #
 # Cleopatra is a graphical add-on to Vim that was written and
-# is Copyright (C) 2009 Mohamed Jadelrab
 # based on vimmate : God Bless It :)
 #
 module Cleopatra
